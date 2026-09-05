@@ -1,0 +1,38 @@
+name: index
+
+on:
+  schedule:
+    # every 30 minutes; the chain grows ~1.8k blocks/hour, well inside one
+    # 9.5k-block getLogs window per tick on the public gateway
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: indexer
+  cancel-in-progress: false
+
+jobs:
+  walk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: node --experimental-strip-types scripts/indexer.mts
+      - name: commit new events
+        run: |
+          git config user.name "scrip-indexer"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "no new events"
+          else
+            git commit -m "index: corporate actions through $(date -u +%FT%TZ)"
+            git push
+          fi

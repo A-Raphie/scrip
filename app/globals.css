@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  /* security-paper field, mined in the design brief from base.org light system */
+  --color-paper: #eff3ec;
+  --color-paper-raise: #f7faf3;
+  --color-paper-sink: #e5ece0;
+  --color-ink: #151a16;
+  --color-ink-soft: #45514a;
+  --color-ink-mute: #6f7a72;
+  --color-line: #d7e0d3;
+  --color-line-soft: #e5ece0;
+  /* Base Blue, mined from base.org CSS rgba(0,82,255): proof only, never decoration */
+  --color-proof: #0052ff;
+  --color-proof-deep: #0735ff;
+  --color-proof-wash: #dfe8ff;
+}
+
+/* font utilities bind to the next/font variables directly: those live on body
+   (next/font injects them there), so no :root indirection */
+.font-display {
+  font-family: var(--font-bodoni), "Times New Roman", serif;
+}
+.font-sans {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+.font-mono {
+  font-family: var(--font-geist-mono), ui-monospace, "SF Mono", monospace;
+}
+
+html {
+  background: var(--color-paper);
+}
+
+body {
+  color: var(--color-ink);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  /* faint laid-paper grain: two crossed hairline gradients */
+  background-image:
+    repeating-linear-gradient(0deg, rgba(21, 26, 22, 0.016) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, rgba(21, 26, 22, 0.013) 0 1px, transparent 1px 3px);
+}
+
+::selection {
+  background: var(--color-proof-wash);
+}
+
+.proof-link {
+  color: var(--color-proof);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.proof-link:hover {
+  color: var(--color-proof-deep);
+}
+
+/* .5px hairline ring, Base's own elevation habit */
+.ring-hairline {
+  box-shadow: inset 0 0 0 0.5px var(--color-line);
+}
+
+/* THE TAPE: rows punch in like a print head, then settle */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes tape-punch {
+    0% {
+      opacity: 0;
+      transform: translateY(-5px) scaleY(1.04);
+    }
+    55% {
+      opacity: 1;
+      transform: translateY(1px) scaleY(0.99);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scaleY(1);
+    }
+  }
+  .tape-row {
+    opacity: 0;
+    animation: tape-punch 260ms ease-out forwards;
+  }
+  .tape-skip .tape-row {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+/* certificate engraved border: double hairline with corner ticks */
+.cert-border {
+  box-shadow:
+    inset 0 0 0 1px var(--color-ink),
+    inset 0 0 0 4px var(--color-paper),
+    inset 0 0 0 5px rgba(21, 26, 22, 0.55);
+}
