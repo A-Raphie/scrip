@@ -28,10 +28,10 @@ export function GET() {
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
-              fontSize: 74,
-              lineHeight: 1.05,
+              fontSize: 72,
+              lineHeight: 1.06,
               letterSpacing: -2,
-              maxWidth: 900,
+              maxWidth: 940,
               display: "flex",
             }}
           >
@@ -42,16 +42,19 @@ export function GET() {
           </div>
         </div>
 
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
-          <div style={{ fontSize: 22, color: "#6f7a72", fontFamily: "monospace" }}>
-            Coinbase Tokenized Stocks on Base · AAPLc TSLAc NVDAc COINc GOOGLc MSFTc +7
+        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          <div style={{ fontSize: 22, color: "#6f7a72", fontFamily: "monospace", display: "flex" }}>
+            AAPLc · TSLAc · NVDAc · COINc · GOOGLc · MSFTc · METAc · AMZNc · MSTRc · CRCLc · INTCc · SNDKc · SPCXc
           </div>
-          <div style={{ fontSize: 22, color: "#0052ff", fontFamily: "monospace" }}>
-            every line has proof
+          <div style={{ fontSize: 22, color: "#0052ff", fontFamily: "monospace", display: "flex" }}>
+            Coinbase Tokenized Stocks on Base · every line has proof
           </div>
         </div>
       </div>
     ),
-    { width: 1200, height: 630 },
+    {
+      width: 1200,
+      height: 630,
+    },
   );
 }
