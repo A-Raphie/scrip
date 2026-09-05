@@ -2,7 +2,7 @@
 
 **Statements for tokenized stocks.** Paste any Base address and Scrip prints the brokerage-grade statement the new Coinbase tokenized stocks never came with: every trade, dividend, split, and issuer notice, each line backed by its transaction.
 
-Live: https://scrip-coral.vercel.app
+Live: https://scrip-statement.netlify.app
 
 ## The 60-second judge path
 

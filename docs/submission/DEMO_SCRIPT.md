@@ -6,7 +6,7 @@ not pre-memorize values that change (total value, line count).
 
 ## Scene 1: landing (0:00 to 0:14)
 
-On screen: https://scrip-coral.vercel.app landing.
+On screen: https://scrip-statement.netlify.app landing.
 
 Say:
 
@@ -81,6 +81,6 @@ post."
   statements: trades, dividends, splits, and issuer notices, each line backed
   by its transaction.
 - A Demo Video Link: (paste Loom URL after recording)
-- Live Project Link: https://scrip-coral.vercel.app
+- Live Project Link: https://scrip-statement.netlify.app
 - What's your Builder Code?: (his code from base.dev, Settings, Builder Code)
 - Submission Tweet Link: (paste the X post URL after posting, tag @buildonbase)
