@@ -10,7 +10,7 @@ The part nobody noticed: tokenized stock dividends are not paid in cash. The iss
 
 Read-only, no wallet needed, every number re-checkable onchain.
 
-https://scrip-statement.netlify.app
+https://tryscrip.vercel.app
 
 ---
 
@@ -22,4 +22,4 @@ I built Scrip: paste any address, get a brokerage-grade statement of its tokeniz
 
 Read-only, no wallet, every number re-checkable onchain.
 
-https://scrip-statement.netlify.app
+https://tryscrip.vercel.app
