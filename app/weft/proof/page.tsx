@@ -3,6 +3,7 @@ import Link from "next/link";
 import { readLiveVibeState, vibe, vibenetTx } from "@/lib/vibenet";
 import { fmtDate } from "@/lib/format";
 import { BackHome, Footer, Wordmark } from "@/components/chrome";
+import { StatusStrip } from "@/components/status-strip";
 
 export const revalidate = 300;
 
@@ -107,8 +108,16 @@ export default async function ProofPage() {
         <span className="font-mono text-xs tracking-[0.14em] text-ink-mute">BASE VIBENET · TESTNET</span>
       </header>
 
-      <main className="mx-auto w-full max-w-4xl flex-1 px-5 pt-10">
-        <p className="font-mono text-xs uppercase tracking-[0.14em] text-ink-mute">The proof run</p>
+      <main className="mx-auto w-full max-w-4xl flex-1 px-5 pt-6">
+        <StatusStrip
+          items={[
+            { label: "Proof Run", tone: "live" },
+            { label: "Base Vibenet · Testnet" },
+            { label: "6 Transactions" },
+            { label: "B20 Precompiles" },
+          ]}
+        />
+        <p className="mt-6 font-mono text-xs uppercase tracking-[0.14em] text-ink-mute">The proof run</p>
         <h1 className="mt-1 font-display text-3xl tracking-tight sm:text-4xl">
           Weave, dividend, split, unwind. Onchain.
         </h1>

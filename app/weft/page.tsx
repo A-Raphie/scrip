@@ -6,6 +6,7 @@ import { base } from "viem/chains";
 import { useWallet } from "@/components/wallet";
 import Link from "next/link";
 import { BackHome, Footer, Wordmark } from "@/components/chrome";
+import { StatusStrip } from "@/components/status-strip";
 
 const USDC = "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913" as Address;
 
@@ -193,8 +194,16 @@ export default function WeftBasketPage() {
         )}
       </header>
 
-      <main className="mx-auto w-full max-w-4xl flex-1 px-5 pt-10">
-        <p className="font-mono text-xs uppercase tracking-[0.14em] text-ink-mute">Onchain index fund</p>
+      <main className="mx-auto w-full max-w-4xl flex-1 px-5 pt-6">
+        <StatusStrip
+          items={[
+            { label: "Live", tone: "live" },
+            { label: "Base Mainnet" },
+            { label: "Non-Custodial" },
+            { label: "Unaudited" },
+          ]}
+        />
+        <p className="mt-6 font-mono text-xs uppercase tracking-[0.14em] text-ink-mute">Onchain index fund</p>
         <h1 className="mt-1 font-display text-3xl tracking-tight sm:text-4xl">The Tech Basket</h1>
         <p className="mt-2 max-w-xl text-[15px] leading-relaxed text-ink-soft">
           One token holding Apple, NVIDIA, Microsoft, and Tesla: the Coinbase

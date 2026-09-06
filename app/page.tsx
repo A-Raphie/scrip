@@ -4,6 +4,7 @@ import { TaglineReveal } from "@/components/tagline-reveal";
 import { Reveal } from "@/components/reveal";
 import { PriceMarquee } from "@/components/price-marquee";
 import { BasketSpecimen } from "@/components/basket-specimen";
+import { StatusStrip } from "@/components/status-strip";
 import { Footer } from "@/components/chrome";
 
 // the demo address: a real AAPLc holder on Base mainnet, verified Sep 5 2026
@@ -23,6 +24,18 @@ export default async function Home() {
           AN INDEX FUND OF TOKENIZED STOCKS
         </span>
       </header>
+
+      <div className="mx-auto mt-3 w-full max-w-6xl px-5">
+        <StatusStrip
+          items={[
+            { label: "Live", tone: "live" },
+            { label: "Base Mainnet" },
+            { label: "13 Registry Tokens" },
+            { label: "Non-Custodial" },
+            { label: "No Fees" },
+          ]}
+        />
+      </div>
 
       <main className="mx-auto w-full max-w-6xl flex-1 px-5">
         {/* HERO: copy left, live product surface right */}
@@ -73,9 +86,35 @@ export default async function Home() {
         {/* THE SITUATION */}
         <Reveal className="mt-24">
           <section>
-            <h2 className="max-w-2xl font-display text-3xl leading-snug tracking-tight sm:text-4xl">
+            <p className="font-mono text-xs uppercase tracking-[0.14em] text-ink-mute">
+              01 / The situation
+            </p>
+            <h2 className="mt-3 max-w-2xl font-display text-3xl leading-snug tracking-tight sm:text-4xl">
               Buying the stocks is easy. Everything after that is missing.
             </h2>
+            <div className="mt-8 grid gap-3 sm:grid-cols-3">
+              <div className="ring-hairline bg-paper-raise p-5">
+                <p className="tnum font-mono text-4xl text-ink">$0</p>
+                <p className="mt-2 text-[13px] leading-relaxed text-ink-soft">
+                  cash dividends ever received by mainnet holders. Dividends
+                  move through the multiplier, invisible without tooling.
+                </p>
+              </div>
+              <div className="ring-hairline bg-paper-raise p-5">
+                <p className="tnum font-mono text-4xl text-ink">x1.00</p>
+                <p className="mt-2 text-[13px] leading-relaxed text-ink-soft">
+                  every registry multiplier, frozen since launch. The corporate
+                  action machinery is live and waiting.
+                </p>
+              </div>
+              <div className="ring-hairline bg-paper-raise p-5">
+                <p className="tnum font-mono text-4xl text-ink">0</p>
+                <p className="mt-2 text-[13px] leading-relaxed text-ink-soft">
+                  brokerage statements exist for these holders. Weft generated
+                  76 lines for one address in seconds.
+                </p>
+              </div>
+            </div>
             <div className="mt-6 grid max-w-4xl gap-6 text-[17px] leading-relaxed text-ink-soft sm:grid-cols-2">
               <p>
                 Buy a tokenized stock and you receive a number in your wallet.
@@ -154,7 +193,10 @@ export default async function Home() {
         {/* HOW IT WORKS */}
         <Reveal className="mt-24">
           <section>
-            <h2 className="font-display text-3xl tracking-tight">How it works</h2>
+            <p className="font-mono text-xs uppercase tracking-[0.14em] text-ink-mute">
+              02 / Mechanism
+            </p>
+            <h2 className="mt-3 font-display text-3xl tracking-tight">How it works</h2>
             <ol className="mt-8 grid gap-8 sm:grid-cols-3">
               <li className="border-t-2 border-ink pt-4">
                 <span className="font-mono text-xs text-ink-mute">01</span>
@@ -181,10 +223,14 @@ export default async function Home() {
                 </p>
               </li>
             </ol>
+            <p className="ring-hairline mt-8 overflow-x-auto bg-paper-sink/60 px-4 py-3 font-mono text-[12px] text-ink-soft">
+              USDC → weave → wTECH (holds the stock tokens) → dividend →
+              split → unwind → USDC
+            </p>
           </section>
         </Reveal>
 
-        {/* PROOF RUN */}
+        {/* CAN / CANNOT */}
         <Reveal className="mt-24">
           <section className="ring-hairline bg-paper-raise p-8">
             <div className="flex flex-wrap items-start justify-between gap-4">
@@ -212,10 +258,43 @@ export default async function Home() {
           </section>
         </Reveal>
 
+        {/* CAN / CANNOT */}
+        <Reveal className="mt-24">
+          <section>
+            <p className="font-mono text-xs uppercase tracking-[0.14em] text-ink-mute">
+              03 / Boundary
+            </p>
+            <h2 className="mt-3 font-display text-3xl tracking-tight">What Weft does and does not do</h2>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <div className="ring-hairline bg-paper-raise p-6">
+                <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-[#2EBD85]">Does</p>
+                <ul className="mt-4 space-y-3 text-sm leading-relaxed text-ink-soft">
+                  <li className="flex gap-2"><span className="font-mono text-[#2EBD85]">✓</span>Print a full statement for any address, every line backed by its transaction</li>
+                  <li className="flex gap-2"><span className="font-mono text-[#2EBD85]">✓</span>Weave USDC into a self-custodial basket of the four deepest stock pools</li>
+                  <li className="flex gap-2"><span className="font-mono text-[#2EBD85]">✓</span>Render dividends and splits from the onchain multiplier, with issuer announcements attached</li>
+                  <li className="flex gap-2"><span className="font-mono text-[#2EBD85]">✓</span>Re-verify every claim from public RPC, trusting nothing we host</li>
+                </ul>
+              </div>
+              <div className="ring-hairline bg-paper-raise p-6">
+                <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-mute">Does not</p>
+                <ul className="mt-4 space-y-3 text-sm leading-relaxed text-ink-mute">
+                  <li className="flex gap-2"><span className="font-mono">✗</span>Enable trading for US users: tokenized stocks are non-US only</li>
+                  <li className="flex gap-2"><span className="font-mono">✗</span>Custody your funds, hold keys, or take fees: the contract has no owner</li>
+                  <li className="flex gap-2"><span className="font-mono">✗</span>Pay cash dividends: B20 reinvests them as shares by design, and Weft renders that</li>
+                  <li className="flex gap-2"><span className="font-mono">✗</span>Come audited: solo hackathon build, disclosed everywhere it matters</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </Reveal>
+
         {/* FAQ */}
         <Reveal className="mt-24">
           <section>
-            <h2 className="font-display text-3xl tracking-tight">Questions</h2>
+            <p className="font-mono text-xs uppercase tracking-[0.14em] text-ink-mute">
+              04 / Questions
+            </p>
+            <h2 className="mt-3 font-display text-3xl tracking-tight">Questions</h2>
             <div className="mt-8 grid max-w-4xl gap-x-12 gap-y-6 sm:grid-cols-2">
               {[
                 [

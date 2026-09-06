@@ -45,6 +45,10 @@ body {
   background: var(--color-proof-wash);
 }
 
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
 .proof-link {
   color: var(--color-proof);
   text-underline-offset: 3px;
