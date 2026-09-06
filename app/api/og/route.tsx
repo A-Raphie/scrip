@@ -21,7 +21,7 @@ export function GET() {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
           <div style={{ fontSize: 44, letterSpacing: -1 }}>Weft</div>
           <div style={{ fontSize: 20, color: "#6f7a72", letterSpacing: 3, fontFamily: "monospace" }}>
-            STATEMENTS FOR TOKENIZED STOCKS
+            AN INDEX FUND OF TOKENIZED STOCKS
           </div>
         </div>
 
