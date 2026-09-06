@@ -83,11 +83,6 @@ export default async function Home() {
           <PriceMarquee rows={prices} />
         </div>
 
-        {/* LIVE REGISTRY STRIP */}
-        <div className="mt-12">
-          <PriceMarquee rows={prices} />
-        </div>
-
         {/* DESK CATALOG */}
         <Reveal className="mt-16">
           <section>
