@@ -10,7 +10,7 @@ export default function Home() {
     <div className="flex min-h-screen flex-col">
       <header className="mx-auto flex w-full max-w-3xl items-center justify-between px-5 pt-7">
         <Wordmark />
-        <span className="font-mono text-xs tracking-[0.14em] text-ink-mute">
+        <span className="hidden font-mono text-xs tracking-[0.14em] text-ink-mute sm:block">
           AN INDEX FUND OF TOKENIZED STOCKS
         </span>
       </header>
