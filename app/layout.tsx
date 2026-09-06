@@ -1,7 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Libre_Bodoni, Geist, Geist_Mono } from "next/font/google";
 import { WalletProvider } from "@/components/wallet";
 import "./globals.css";
+
+export const viewport: Viewport = {
+  themeColor: "#eff3ec",
+};
 
 const bodoni = Libre_Bodoni({
   subsets: ["latin"],
@@ -21,13 +25,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Scrip: statements for tokenized stocks",
+  metadataBase: new URL("https://tryscrip.vercel.app"),
+  title: "Weft: one token, woven from real stocks",
   description:
-    "Paste any Base address. Scrip reads Coinbase tokenized stock tokens (B20) and prints a brokerage-grade statement: trades, dividends, splits, and issuer notices, each line backed by its transaction.",
+    "Weft weaves USDC into a weighted basket of Coinbase tokenized stocks on Base: one self-custodial index token, dividends handled, redeemable anytime, every step provable.",
   openGraph: {
-    title: "Scrip: statements for tokenized stocks",
+    title: "Weft: one token, woven from real stocks",
     description:
-      "The paperwork your tokenized stocks never came with. Every line backed by its transaction.",
+      "An onchain index fund of Coinbase tokenized stocks. Dividends handled. Every step provable.",
     images: ["/api/og"],
   },
 };
