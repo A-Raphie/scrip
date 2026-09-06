@@ -12,6 +12,12 @@ Live: https://tryscrip.vercel.app/weft
 4. "See a live statement" shows the proof layer running on the same registry: every trade, dividend, split, and issuer notice, each line backed by its transaction.
 5. Unwind: shares burn, USDC returns, pro-rata.
 
+## The proof run (onchain, today)
+
+No dividend or split has ever executed on the mainnet registry (all 13 multipliers read 1.0). So the full loop ran on **Base Vibenet**, where the same B20 precompiles are live: weave 1,000 tUSDC into a real B20 index, both dividends land via announced multiplier events (1.00 to 1.02), a 2-for-1 split lands (1.02 to 2.04), unwind closes the loop. **7/7 claims verified against the public RPC** by `node scripts/verify-vibenet.mjs` (see `evidence/claims.json` for artifacts and regeneration commands). Live page: [/weft/proof](https://scrip-statement.netlify.app/weft/proof).
+
+The one honest wart: the Vibenet fixture pools use fixed prices, so the split-doubled value reads in the basket valuation but not in the unwind output. On mainnet the pools are Aerodrome Slipstream with live LP pricing.
+
 ## Why an index, and why it had to be built for B20
 
 The sponsor's own request-for-builders names it: composable single-name stocks with deep underlying liquidity, turned into personal portfolios. The liquidity is real and measured: AAPLc/USDC holds $1.36M on Aerodrome Slipstream ($1.6M daily volume), NVDAc/USDC $2.6M.
