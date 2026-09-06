@@ -113,7 +113,7 @@ export default async function CertificatePage({ params }: Params) {
           <p className="mt-10 text-center text-xs leading-relaxed text-ink-mute">
             Anyone can re-verify this certificate by drawing the statement again:
             the hash of every line is recomputed from Base mainnet, never stored.
-            Scrip reads public data only and is not affiliated with Coinbase or
+            Weft reads public data only and is not affiliated with Coinbase or
             Base.
           </p>
         </article>
