@@ -1,8 +1,8 @@
 # Loom demo script (~100 seconds, his voice)
 
-Format rules: Loom screen recording, cursor at natural pace, never compress
-pauses. Numbers on screen are real at record time: read them off the page, do
-not pre-memorize values that change (total value, line count).
+Format rules: Loom screen recording, natural cursor pace, never compress
+pauses. Read live numbers off the page at record time; do not memorize values
+that move (basket value, share count).
 
 ## Scene 1: landing (0:00 to 0:14)
 
@@ -10,76 +10,74 @@ On screen: https://tryscrip.vercel.app landing.
 
 Say:
 
-"Coinbase put real stocks onchain: Apple, Tesla, Nvidia, on Base, as tokens.
-But when you buy them, you get a balance and nothing else. No statement, no
-dividend notice, no paperwork."
+"Coinbase put real stocks onchain: Apple, NVIDIA, Microsoft, Tesla, on Base,
+as tokens. Which means, for the first time, you can weave them into one
+token. This is Weft."
 
-## Scene 2: the one-liner (0:14 to 0:26)
+## Scene 2: the basket (0:14 to 0:30)
 
-On screen: same, cursor to the address form.
-
-Say:
-
-"This is Scrip. Paste any address: no wallet, no signature. It prints the
-statement that should have come with the tokens."
-
-Action: click "See a live statement".
-
-## Scene 3: the tape prints (0:26 to 0:55)
-
-On screen: the statement page, tape printing.
+On screen: /weft with wallet connected.
 
 Say:
 
-"This is a real address holding five Coinbase stock tokens. The tape prints
-its actual trade history from the chain, oldest first. Every line carries a
-proof link straight to the transaction on Basescan. Nothing is stored: Scrip
-re-reads the chain every single time."
+"This is the Tech Basket: thirty-five percent Apple, thirty-five NVIDIA,
+fifteen Microsoft, fifteen Tesla. I am weaving in twenty USDC. One
+transaction swaps every leg across Aerodrome pools and mints my shares."
 
-Action: click one proof link, show Basescan for two seconds, come back.
+Action: type 20, approve, weave, show the confirmation.
 
-## Scene 4: the dividend mechanism (0:55 to 1:18)
+## Scene 3: the position (0:30 to 0:50)
 
-On screen: scroll to the footnotes, then the holdings table with the
-multiplier column.
+On screen: position line + basket value.
 
 Say:
 
-"Here is the part nobody noticed. Tokenized stock dividends are not paid in
-cash. The issuer raises a multiplier onchain instead, and your tokens quietly
-become more shares. The standard was engineered for exactly that, but nobody
-built the statement line. Scrip's indexer watches every multiplier event and
-every issuer announcement, and the moment the first dividend runs, every
-holder's statement grows the line automatically."
+"There are my shares, valued live off the Coinbase total-return oracle
+feeds. Every leg of that weave is a real swap on a real pool, and every step
+is provable: this index holds the tokens itself, no manager, no keys."
 
-## Scene 5: the certificate (1:18 to 1:38)
+Action: click the index contract address, show Basescan, come back.
 
-On screen: click "Mint the certificate".
+## Scene 4: the dividend mechanism (0:50 to 1:12)
 
-Say:
-
-"Mint the certificate, and Scrip redraws the entire statement from the chain
-and compares the hash. If every line still matches, it stamps it verified.
-That is verification by replay, not a stored badge."
-
-## Scene 6: close (1:38 to 1:45)
-
-On screen: certificate page.
+On screen: scroll to the footnotes on /weft.
 
 Say:
 
-"Scrip. The paperwork your tokenized stocks never came with. Link in the
-post."
+"Here is the part a generic basket gets wrong. Tokenized stock dividends are
+not paid in cash: the issuer raises an onchain multiplier instead, and your
+tokens quietly become more shares. Weft reads that multiplier directly, so
+when Coinbase runs its first dividend, it accrues to holders without breaking
+a single weight. Nobody has run one yet. Weft is built and waiting."
+
+## Scene 5: unwind (1:12 to 1:30)
+
+On screen: unwind out card.
+
+Say:
+
+"And unwind is the same road in reverse: shares burn, USDC comes back,
+pro-rata, with slippage guards on every leg."
+
+Action: redeem a small percentage, show USDC returned.
+
+## Scene 6: close (1:30 to 1:40)
+
+On screen: landing.
+
+Say:
+
+"Weft. Real stocks, one token. Link in the post."
 
 ---
 
 # Google Form answers (draft: his clicks, notify-gated)
 
-- Project Name: Scrip
-- What does it solve in under 1-2 lines: Coinbase tokenized stocks come with
-  no paperwork. Scrip turns onchain stock events into brokerage-grade
-  statements: trades, dividends, splits, and issuer notices, each line backed
-  by its transaction.
+- Project Name: Weft
+- What does it solve in under 1-2 lines: Coinbase tokenized stocks made
+  equity composable; Weft is the first index fund built on them: one
+  self-custodial token holding a weighted basket, multiplier-aware so
+  dividends accrue correctly, redeemable anytime.
 - A Demo Video Link: (paste Loom URL after recording)
 - Live Project Link: https://tryscrip.vercel.app
 - What's your Builder Code?: (his code from base.dev, Settings, Builder Code)
