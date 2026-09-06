@@ -1,62 +1,49 @@
-# Scrip
+# Weft
 
-**Statements for tokenized stocks.** Paste any Base address and Scrip prints the brokerage-grade statement the new Coinbase tokenized stocks never came with: every trade, dividend, split, and issuer notice, each line backed by its transaction.
+**One token, woven from real stocks.** Weft is an onchain index fund built from Coinbase Tokenized Stocks on Base: weave USDC in, receive a self-custodial basket token holding Apple, NVIDIA, Microsoft, and Tesla, unwind back to USDC anytime. Dividends handled. Every step provable.
 
-Live: https://tryscrip.vercel.app
+Live: https://tryscrip.vercel.app/weft
 
 ## The 60-second judge path
 
-1. Open the live link.
-2. Hit "See a live statement" (a real Base address holding Coinbase stock tokens).
-3. Watch the tape print the holder's actual trade history, then open any line's `proof` link: it is the transaction on Basescan.
-4. Press "Mint the certificate": Scrip re-draws the statement from the chain and stamps the certificate VERIFIED when every line still matches.
+1. Open the live link and hit "Open the basket".
+2. Connect a wallet on Base (or watch the recorded weave on the statement pages).
+3. Weave USDC in: one transaction swaps across the weights and mints index shares.
+4. "See a live statement" shows the proof layer running on the same registry: every trade, dividend, split, and issuer notice, each line backed by its transaction.
+5. Unwind: shares burn, USDC returns, pro-rata.
 
-No wallet connection. Nothing signs. The whole product is read-only.
+## Why an index, and why it had to be built for B20
 
-## Why this exists
+The sponsor's own request-for-builders names it: composable single-name stocks with deep underlying liquidity, turned into personal portfolios. The liquidity is real and measured: AAPLc/USDC holds $1.36M on Aerodrome Slipstream ($1.6M daily volume), NVDAc/USDC $2.6M.
 
-Coinbase puts real stocks on Base as B20 tokens: AAPLc, TSLAc, NVDAc and ten more. Holding and trading them is permissionless. What a holder gets today: a token balance. What a holder does not get: a statement, cost history, dividend notices, split records, anything they can show an accountant, a friend, or a counterparty.
+And the part a generic basket gets wrong: tokenized stock dividends are not paid in cash. The issuer raises an onchain multiplier (`UIMultiplierUpdated`) and one B20 token quietly becomes more than one share. Their docs warn: "One B20 token does not permanently equal one share." A basket that reads raw balances breaks silently on the first corporate action. Weft prices its inventory through `scaledBalanceOf` and values it with the Coinbase total-return Chainlink feeds, so dividends accrue to holders and weights stay true. No dividend has executed yet (every registry multiplier reads 1.0 today); the moment one runs, the mechanism is already proven in the tests.
 
-The B20 standard was engineered for this and almost nobody noticed:
+## The contract
 
-- Dividends are not paid in cash. The issuer raises an onchain **multiplier** (`UIMultiplierUpdated`): your tokens quietly become more shares. Scrip turns those events back into the dividend lines a real statement shows.
-- Issuer notices are written onchain as human-readable `Announcement` events, explicitly "to support public reporting requirements". Scrip is the reporting surface.
-- Every holder action is a standard `Transfer` log. Scrip renders them as the trade ledger, each row stamped with its transaction.
+`src/WeftIndex.sol`: ~230 lines, no owner, no upgrades, no fees.
 
-## How it works
+- `deposit(usdcIn, minShares)`: swaps USDC across fixed weights directly on Aerodrome Slipstream pools (contract-to-pool, no router middleman), mints shares pro-rata on share-denominated inventory value.
+- `redeem(shares, minUsdcOut, slippageBps)`: burns shares, unwinds pro-rata per leg with per-leg slippage guards, returns USDC.
+- Valuation: `scaledBalanceOf` (raw x multiplier) x Chainlink total-return price, with documented staleness bounds (feeds freeze on weekends and corporate actions; valuations refuse stale data).
+- First-deposit inflation is poisoned with dead shares; reentrancy guarded; per-leg slippage enforced.
 
-- **Trades**: Blockscout's public API gives full per-address token transfer history for Base (free RPC gateways cap `eth_getLogs` at 10,000 blocks, which makes history walks impossible at render time).
-- **Live state**: official Base gateway multicall. Balances, `scaledBalanceOf` (raw tokens x multiplier = redeemable shares), and the Coinbase total-return Chainlink feeds for prices, with the documented staleness rules applied.
-- **Corporate actions**: a GitHub Actions indexer walks the chain every 30 minutes in 9,500-block windows and commits every `UIMultiplierUpdated` and `Announcement` event to `data/actions.jsonl` in this repo. The walk resumes from a cursor, so it keeps up with chain head forever.
-- **Certificates**: `/c/{address}/{hash}` re-draws the whole statement from scratch and compares the hash. Identical: VERIFIED. Different: AMENDED. Verification is a replay, not a stored badge.
+Honest disclosure: solo, unaudited, hackathon scope. Weights are fixed at creation; value weights drift with prices between deposits, like any index. The contract is permissionless: the interface carries the same non-US eligibility notice Coinbase's own product carries, and no US-trading features exist.
 
-## Honest status
+## Tests
 
-| Claim | Status |
-|---|---|
-| Real Coinbase stock registry (13 tokens) read live | yes, balances and total-return prices onchain |
-| Real trade history per address | yes, from public indexer, every line links its tx |
-| Dividend and split lines from multiplier events | engine live in production, zero events exist yet |
-| Chain-wide corporate-action indexing | running every 30 minutes via Actions |
+`forge test --match-contract WeftUnitTest`: 6 passing. The load-bearing one is `test_multiplier_bump_accrues_to_holders`: after a simulated 2% dividend (multiplier 1.00 to 1.02), raw balances are untouched, basket value rises 2%, and later depositors receive fewer shares per dollar. Slippage guards, stale-feed refusal, and weight-sum validation are covered.
 
-The last two rows are the honest catch, and they are the interesting one: the Coinbase registry is weeks old and **no dividend or split has ever executed**. Every token's multiplier reads exactly 1.0 today (you can check: `multiplier()` on any registry token). The statement engine consumes those events already, the indexer is already watching, and the moment the issuer runs the first dividend, every holder's statement grows the dividend line automatically. Where a claim could not be verified, the UI says so instead of guessing: stale price feeds hide valuations, positions closed before indexed history carry a footnote, and the split-versus-dividend label follows a stated ratio rule.
+Fork tests (`WeftFork.t.sol`) are specified but skipped: B20 stock tokens are chain-native precompiles, which test frameworks cannot execute in-process. They document the funded mainnet dry run instead: $10 woven, unwound, and verified onchain before submission.
+
+## The registry (verified against docs.base.org, Sep 2026)
+
+AAPLc, TSLAc, NVDAc, COINc, GOOGLc, MSFTc, METAc, AMZNc, MSTRc, CRCLc, INTCc, SNDKc, SPCXc. Basket v1 holds the four deepest USDC pools (AAPLc, NVDAc, MSFTc, TSLAc); GOOGLc/METAc/AMZNc direct pools did not exist at build time and are noted rather than pretended.
 
 ## Stack
 
-Next.js (App Router, RSC) + TypeScript + Tailwind v4 + viem. No database: the chain is the database, the repo is the corporate-action store, and certificates are verified by replay. Deployed on Vercel.
+Next.js (App Router, RSC) + TypeScript + Tailwind v4 + viem + Foundry. No database: the chain is the database. Deployed on Vercel with the statement/certificate layer.
 
-## Verification, for the skeptical
-
-```bash
-# any registry token's multiplier, right now
-cast call 0xb200000000000000000000C2e324d24d7eEcd1fb "multiplier()(uint256)" --rpc-url https://mainnet.base.org
-# -> 1000000000000000000  (1.0: the first dividend is still in the future)
-
-# the corporate-action store, committed by the indexer
-git log --oneline -- data/
-```
-
-Token addresses and feed addresses are the official ones from `docs.base.org/specifications/b20/tokenized-stocks-on-base`. Scrip is not affiliated with Coinbase or Base. Tokenized stocks are available to eligible non-US users only; Scrip displays public chain data and does not enable trading.
+Weft is not affiliated with Coinbase or Base. Tokenized stocks are available to eligible non-US users only. The interface displays public chain data and does not enable trading for US users.
 
 ---
 
