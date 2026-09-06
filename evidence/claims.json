@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "project": "Weft",
+    "site": "https://tryscrip.vercel.app",
+    "mirror": "https://scrip-statement.netlify.app",
+    "generated": "2026-09-07",
+    "note": "Every claim carries its artifact and a regeneration command that trusts nothing in this repo. Claims referencing Vibenet use the public RPC https://rpc.vibes.base.org.",
+    "disclosures": [
+      "Vibenet is Base's experimental preview network; test tokens hold no monetary value.",
+      "tUSDC, fixed-price pools, and mock feeds on Vibenet are disclosed fixtures (src/testnet/Fixtures.sol).",
+      "WeftIndex is unaudited, solo-built, hackathon scope. No owner, no upgrades, no fees.",
+      "No dividend or split has ever executed on the Coinbase registry on Base mainnet; every mainnet multiplier reads 1.0 (verified claim C11).",
+      "Weights are fixed at creation; value weights drift with prices between deposits, like any index."
+    ]
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "The two proof-run stock tokens are real B20 Asset-variant tokens created by the official factory precompile on Base Vibenet.",
+      "artifact": "wAAPL 0xB2000000000000000000000C11b319723b1cF075, wNVDA 0xB2000000000000000000004ab0A894CE7e5Ed1FC, create txs 0x5d9eb0ab6299d4079f00eb2e57e9fd833932a30f4869ddd2e7a6c9fdfdac1da9 (wAAPL)",
+      "verify": "cast call 0xB2000000000000000000000C11b319723b1cF075 \"symbol()(string)\" --rpc-url https://rpc.vibes.base.org   # -> wAAPL"
+    },
+    {
+      "id": "C02",
+      "claim": "A 2% dividend was executed onchain: the B20 multiplier moved 1.00 to 1.02 via updateUIMultiplier, wrapped in a human-readable Announcement.",
+      "artifact": "tx 0x9067a7dc2fc4d2419cf73f85ca0c07ab01aacae6988f84d6ff90d7ea4e600739 (wAAPL) and 0x23e20114d367184c648e9d412bc086688c46bc413a9394a5580e5885a47c011c (wNVDA)",
+      "verify": "cast call 0xB2000000000000000000000C11b319723b1cF075 \"multiplier()(uint256)\" --rpc-url https://rpc.vibes.base.org   # -> 1020000000000000000"
+    },
+    {
+      "id": "C03",
+      "claim": "A 2-for-1 stock split was executed onchain: the wNVDA multiplier doubled 1.02 to 2.04.",
+      "artifact": "tx 0x9e3f50bb2f622d5b674b91250562b9df0ff32ef8e810572f8604c933f397b2bd",
+      "verify": "cast call 0xB2000000000000000000004ab0A894CE7e5Ed1FC \"multiplier()(uint256)\" --rpc-url https://rpc.vibes.base.org   # -> 2040000000000000000"
+    },
+    {
+      "id": "C04",
+      "claim": "Weaving 1,000 tUSDC minted 1,000 wPROOF shares and the index took real custody of the stock tokens (2.5 wAAPL, 5 wNVDA raw).",
+      "artifact": "tx 0x8163360d4b54270bc45ebc04147b945b154c0d8be4257d202052b1b79f06950d; snapshots in data/vibenet-run.json after_weave",
+      "verify": "cast call <INDEX> \"scaledBalanceOf-address\" --rpc-url ... ; see scripts/verify-vibenet.mjs claim 4"
+    },
+    {
+      "id": "C05",
+      "claim": "The dividend accrued to the index without touching raw balances: value moved 1000 to 1020 while raw holdings stayed 2.5/5.0.",
+      "artifact": "data/vibenet-run.json after_weave vs after_dividend",
+      "verify": "node scripts/verify-vibenet.mjs claim 5"
+    },
+    {
+      "id": "C06",
+      "claim": "The 2-for-1 split doubled the wNVDA leg's redemption and the basket value with it (1020 to 1530), raw balances still untouched.",
+      "artifact": "data/vibenet-run.json after_split; tx 0x9e3f50bb2f622d5b674b91250562b9df0ff32ef8e810572f8604c933f397b2bd",
+      "verify": "node scripts/verify-vibenet.mjs claim 6"
+    },
+    {
+      "id": "C07",
+      "claim": "Unwinding returned the full accrued value: 1,530 tUSDC (1,000 woven + 20 dividend + 510 split) with the entire supply burned to zero.",
+      "artifact": "tx 0x8bf76f4de4d7da9f31ace4644286a0abcf58c4bc9f5064561ecf4e5a2f179d28; data/vibenet-run.json after_unwind (shares 0, usdc_returned 1999999000 on the demo user across flows)",
+      "verify": "node scripts/verify-vibenet.mjs claim 7"
+    },
+    {
+      "id": "C08",
+      "claim": "Issuer announcements are human-readable onchain and Weft renders them: two quarterly-dividend notices and one split notice, exactly as B20's Announcement events carry them.",
+      "artifact": "data/vibenet-actions.jsonl (6 rows: 2 Announcements + 4 UIMultiplierUpdated incl. legacy topic)",
+      "verify": "cat data/vibenet-actions.jsonl"
+    },
+    {
+      "id": "C09",
+      "claim": "The Coinbase registry on Base mainnet is live and Weft reads it: the demo statement resolves real holdings, real trades, and real prices for a real holder address.",
+      "artifact": "https://tryscrip.vercel.app/s/0x68275200408371a3B34D36F1Ce058Cba2423F41F (also on the mirror)",
+      "verify": "cast call 0xb200000000000000000000C2e324d24d7eEcd1fb \"balanceOf(address)(uint256)\" 0x68275200408371a3B34D36F1Ce058Cba2423F41F --rpc-url https://mainnet.base.org"
+    },
+    {
+      "id": "C10",
+      "claim": "Mainnet liquidity for the first basket is real and measured: AAPLc/USDC $1.36M and NVDAc/USDC $2.64M on Aerodrome Slipstream (Sep 6 2026, GeckoTerminal).",
+      "artifact": "GeckoTerminal pool data; pool addresses in data/vibenet.json companion table",
+      "verify": "curl -s https://api.geckoterminal.com/api/v2/networks/base/tokens/0xb200000000000000000000C2e324d24d7eEcd1fb/pools"
+    },
+    {
+      "id": "C11",
+      "claim": "No corporate action has ever executed on the mainnet registry: all 13 Coinbase stock token multipliers read exactly 1.0, so the first dividend will be the first live proof of the multiplier path on mainnet.",
+      "artifact": "scripts/verify-mainnet.mjs claim 11 (multicall over all 13 registry multipliers)",
+      "verify": "node scripts/verify-mainnet.mjs claim 11"
+    },
+    {
+      "id": "C12",
+      "claim": "The index contract enforces the mechanics the README promises: share math on deposit, per-leg slippage guards on redeem, stale-feed refusal, and weight-sum validation. 6/6 unit tests pass including a simulated 2% dividend accruing to holders.",
+      "artifact": "forge test --match-contract WeftUnitTest",
+      "verify": "forge test --match-contract WeftUnitTest -vv"
+    }
+  ]
+}

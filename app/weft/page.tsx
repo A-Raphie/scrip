@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { formatUnits, type Address } from "viem";
 import { base } from "viem/chains";
 import { useWallet } from "@/components/wallet";
+import Link from "next/link";
 import { BackHome, Footer, Wordmark } from "@/components/chrome";
 
 const USDC = "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913" as Address;
@@ -201,17 +202,59 @@ export default function WeftBasketPage() {
           provable onchain.
         </p>
 
-        {!hasIndex ? (
-          <section className="ring-hairline mt-8 bg-paper-raise p-8">
-            <p className="font-display text-xl">The first basket is being woven onto mainnet.</p>
-            <p className="mt-2 text-sm text-ink-soft">
-              The contract is deploying today. Come back shortly: this page
-              lights up the moment the basket exists.
-            </p>
-          </section>
-        ) : (
+        {/* the proof run: executed onchain on Vibenet, open always */}
+        <section className="ring-hairline mt-8 bg-paper-raise p-6">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-mute">
+                Live now · Base Vibenet (testnet)
+              </p>
+              <h2 className="mt-1 font-display text-xl">The proof run</h2>
+              <p className="mt-2 max-w-lg text-sm leading-relaxed text-ink-soft">
+                No dividend or split has ever run on the mainnet Coinbase
+                registry, so Weft executed the full loop onchain where the B20
+                precompiles are live today: weave 1,000 tUSDC, both dividends
+                land, a 2-for-1 split lands, unwind returns 1,530. Every line
+                links to its transaction.
+              </p>
+            </div>
+            <Link
+              href="/weft/proof"
+              className="shrink-0 bg-ink px-5 py-3 text-sm font-medium text-paper hover:bg-ink-soft"
+            >
+              See the proof run
+            </Link>
+          </div>
+        </section>
+
+        {/* mainnet rail: the measured pools the index is built for */}
+        <section className="ring-hairline mt-4 bg-paper-raise p-6">
+          <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-mute">
+            Mainnet rail · Aerodrome Slipstream, measured Sep 6 2026
+          </p>
+          <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {[
+              ["AAPLc / USDC", "$1.36M"],
+              ["NVDAc / USDC", "$2.64M"],
+              ["TSLAc / USDC", "$145K"],
+              ["MSFTc / USDC", "$74K"],
+            ].map(([pair, liq]) => (
+              <div key={pair} className="ring-hairline bg-paper p-3">
+                <p className="font-mono text-[11px] text-ink-mute">{pair}</p>
+                <p className="mt-0.5 font-mono text-base text-ink">{liq}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-3 text-[13px] leading-relaxed text-ink-mute">
+            The same WeftIndex bytecode that ran the proof deploys against these
+            pools on mainnet. The basket page lights up for wallet actions at
+            mainnet deployment.
+          </p>
+        </section>
+
+        {/* wallet section: reads live when NEXT_PUBLIC_WEFT_INDEX is set */}
+        {(address && hasIndex) && (
           <>
-            {/* basket composition */}
             <section className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {legs.map((leg) => (
                 <div key={leg.token} className="ring-hairline bg-paper-raise p-4">
@@ -327,11 +370,10 @@ export default function WeftBasketPage() {
               </>
             )}
 
-            {!address && hasIndex && (
-              <p className="mt-6 text-sm text-ink-mute">
-                Connect a wallet on Base to weave. Nothing moves until you sign.
-              </p>
-            )}
+            <p className="mt-6 text-sm text-ink-mute">
+              Wallet actions land with the mainnet deployment. Until then, the
+              proof run above is fully live.
+            </p>
           </>
         )}
 

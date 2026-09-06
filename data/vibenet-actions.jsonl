@@ -1,0 +1,6 @@
+{"k": "a", "sym": "wAAPL", "b": 1639244, "tx": "0x9067a7dc2fc4d2419cf73f85ca0c07ab01aacae6988f84d6ff90d7ea4e600739", "t": 0, "i": "weft-dividend-1", "d": "Quarterly dividend: multiplier raised 1.00 to 1.02; holders receive 2 percent more redeemable shares."}
+{"k": "m", "sym": "wAAPL", "b": 1639244, "tx": "0x9067a7dc2fc4d2419cf73f85ca0c07ab01aacae6988f84d6ff90d7ea4e600739", "t": 0, "o": "1000000000000000000", "n": "1020000000000000000", "e": "1788719735"}
+{"k": "m", "sym": "wNVDA", "b": 1639263, "tx": "0x23e20114d367184c648e9d412bc086688c46bc413a9394a5580e5885a47c011c", "t": 0, "o": "1000000000000000000", "n": "1020000000000000000", "e": "1788719739"}
+{"k": "a", "sym": "wNVDA", "b": 1639263, "tx": "0x23e20114d367184c648e9d412bc086688c46bc413a9394a5580e5885a47c011c", "t": 0, "i": "weft-dividend-2", "d": "Quarterly dividend: multiplier raised 1.00 to 1.02; holders receive 2 percent more redeemable shares."}
+{"k": "m", "sym": "wNVDA", "b": 1639376, "tx": "0x9e3f50bb2f622d5b674b91250562b9df0ff32ef8e810572f8604c933f397b2bd", "t": 0, "o": "1020000000000000000", "n": "2040000000000000000", "e": "1788719762"}
+{"k": "a", "sym": "wNVDA", "b": 1639376, "tx": "0x9e3f50bb2f622d5b674b91250562b9df0ff32ef8e810572f8604c933f397b2bd", "t": 0, "i": "weft-split-1", "d": "2-for-1 stock split: multiplier doubled 1.02 to 2.04; every token now redeems for twice the shares."}
