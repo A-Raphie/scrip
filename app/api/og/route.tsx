@@ -19,7 +19,7 @@ export function GET() {
         }}
       >
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
-          <div style={{ fontSize: 44, letterSpacing: -1 }}>Scrip</div>
+          <div style={{ fontSize: 44, letterSpacing: -1 }}>Weft</div>
           <div style={{ fontSize: 20, color: "#6f7a72", letterSpacing: 3, fontFamily: "monospace" }}>
             STATEMENTS FOR TOKENIZED STOCKS
           </div>
@@ -35,10 +35,10 @@ export function GET() {
               display: "flex",
             }}
           >
-            The paperwork your tokenized stocks never came with.
+            One token, woven from real stocks.
           </div>
           <div style={{ marginTop: 28, fontSize: 26, color: "#45514a", display: "flex" }}>
-            Trades, dividends, splits, issuer notices. Every line backed by its transaction.
+            An index fund of Coinbase tokenized stocks. Dividends handled. Every step provable.
           </div>
         </div>
 
@@ -47,7 +47,7 @@ export function GET() {
             AAPLc · TSLAc · NVDAc · COINc · GOOGLc · MSFTc · METAc · AMZNc · MSTRc · CRCLc · INTCc · SNDKc · SPCXc
           </div>
           <div style={{ fontSize: 22, color: "#0052ff", fontFamily: "monospace", display: "flex" }}>
-            Coinbase Tokenized Stocks on Base · every line has proof
+            Coinbase Tokenized Stocks on Base · an index fund, self-custodial
           </div>
         </div>
       </div>
