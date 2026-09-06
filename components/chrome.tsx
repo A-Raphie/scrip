@@ -15,7 +15,7 @@ export function Footer() {
     <footer className="border-t border-line-soft">
       <div className="mx-auto flex max-w-3xl flex-col gap-2 px-5 py-8 text-sm text-ink-mute sm:flex-row sm:items-center sm:justify-between">
         <p>
-          Scrip reads public chain data. Not affiliated with Coinbase or Base.
+          Weft reads public chain data. Not affiliated with Coinbase or Base.
           Tokenized stocks are available to eligible non-US users only.
         </p>
         <p className="shrink-0">
