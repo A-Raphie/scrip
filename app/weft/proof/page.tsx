@@ -93,7 +93,7 @@ export default async function ProofPage() {
     kind: "UNWOUND",
     at: 0,
     headline: "Unwound all 1,000 shares",
-    detail: `${(n6(r.usdc_returned)).toFixed(2)} tUSDC in the basket wallet after unwinding: the full 1,530 accrued value, dividend and split included`,
+    detail: `Unwound into 999.999 tUSDC plus the 1,000 unused weave balance: the fixture pools price at their fixed rate, so the split-doubled value shows in the basket read, not the unwind`,
     tx: r.tx_unwind,
   });
 
