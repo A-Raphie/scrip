@@ -228,7 +228,7 @@ export async function buildStatement(
     r: rows.map((r) => [r.kind, r.symbol, r.at, r.txHash, r.headline]),
   });
   const statementHash = keccak256(toBytes(canonical));
-  const serial = `SCRIP-${statementHash.slice(2, 6).toUpperCase()}-${statementHash
+  const serial = `WEFT-${statementHash.slice(2, 6).toUpperCase()}-${statementHash
     .slice(6, 10)
     .toUpperCase()}-${statementHash.slice(10, 14).toUpperCase()}`;
 
