@@ -83,6 +83,56 @@ export default async function Home() {
           <PriceMarquee rows={prices} />
         </div>
 
+        {/* LIVE REGISTRY STRIP */}
+        <div className="mt-12">
+          <PriceMarquee rows={prices} />
+        </div>
+
+        {/* DESK CATALOG */}
+        <Reveal className="mt-16">
+          <section>
+            <p className="font-mono text-xs uppercase tracking-[0.14em] text-ink-mute">
+              05 / The registry desk
+            </p>
+            <h2 className="mt-3 font-display text-3xl tracking-tight">
+              Thirteen stocks. One chain.
+            </h2>
+            <div className="ring-hairline mt-6 overflow-x-auto bg-paper-raise">
+              <table className="tnum w-full min-w-[560px] text-sm">
+                <thead>
+                  <tr className="border-b border-line-soft text-left font-mono text-[11px] uppercase tracking-[0.12em] text-ink-mute">
+                    <th className="px-4 py-3 font-medium">Token</th>
+                    <th className="px-4 py-3 font-medium">Issuer</th>
+                    <th className="px-4 py-3 text-right font-medium">Oracle price</th>
+                    <th className="px-4 py-3 text-right font-medium">Feed</th>
+                  </tr>
+                </thead>
+                <tbody className="font-mono text-[13px]">
+                  {prices.map((p) => (
+                    <tr key={p.symbol} className="border-b border-line-soft/60 last:border-b-0">
+                      <td className="px-4 py-2.5 text-ink">{p.symbol}</td>
+                      <td className="px-4 py-2.5 text-ink-soft">{p.name}</td>
+                      <td className="px-4 py-2.5 text-right text-ink">
+                        {p.price !== null && !p.stale
+                          ? `$${p.price.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+                          : "stale"}
+                      </td>
+                      <td className="px-4 py-2.5 text-right text-[#2EBD85]">
+                        {p.price !== null && !p.stale ? "live" : "held"}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-3 text-[13px] leading-relaxed text-ink-mute">
+              Feeds run 24/5 and hold their last close over weekends and
+              corporate actions; Weft refuses valuations when a feed goes stale
+              rather than guessing.
+            </p>
+          </section>
+        </Reveal>
+
         {/* THE SITUATION */}
         <Reveal className="mt-24">
           <section>
