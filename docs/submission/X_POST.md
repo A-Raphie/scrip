@@ -1,25 +1,23 @@
 # X post (final copy for @A_Raphie)
 
-Coinbase put real stocks on Base: Apple, Tesla, Nvidia, and ten more, as tokens.
+Coinbase put real stocks on Base: Apple, NVIDIA, Microsoft, Tesla, as tokens.
 
-But when you buy them, you get a balance and nothing else. No statement, no dividend notice, no paperwork.
+Buying them one by one is fine. But your stocks just became composable, and nobody is composing them.
 
-So I built Scrip. Paste any address and it prints the statement: every trade, dividend, split, and issuer notice, each line backed by its transaction.
+So I built Weft: weave USDC in, get one self-custodial token holding a weighted basket of those stocks. Unwind anytime. The contract reads B20 multipliers directly, so when the first dividend lands, it accrues to holders without breaking a single weight.
 
-The part nobody noticed: tokenized stock dividends are not paid in cash. The issuer raises a multiplier onchain and your tokens quietly become more shares. Scrip turns those events back into the dividend lines a real statement shows.
+No manager. No fees. No keys. Every swap provable onchain.
 
-Read-only, no wallet needed, every number re-checkable onchain.
-
-https://tryscrip.vercel.app
+https://tryscrip.vercel.app/weft
 
 ---
 
 # Alternative short version (same claims, compressed)
 
-Coinbase put real stocks on Base, and the paperwork never showed up.
+Tokenized stocks on Base just made equity composable, and nobody is composing it.
 
-I built Scrip: paste any address, get a brokerage-grade statement of its tokenized stocks. Every trade, dividend, split, and issuer notice, each line backed by its transaction.
+I built Weft: one self-custodial token woven from Apple, NVIDIA, Microsoft, and Tesla on Base. Weave USDC in, unwind anytime, multiplier-aware so dividends land correctly.
 
-Read-only, no wallet, every number re-checkable onchain.
+Every swap provable onchain.
 
-https://tryscrip.vercel.app
+https://tryscrip.vercel.app/weft
