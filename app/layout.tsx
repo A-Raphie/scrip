@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Libre_Bodoni, Geist, Geist_Mono } from "next/font/google";
+import { WalletProvider } from "@/components/wallet";
 import "./globals.css";
 
 const bodoni = Libre_Bodoni({
@@ -39,7 +40,7 @@ export default function RootLayout({
       <body
         className={`${bodoni.variable} ${geist.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <WalletProvider>{children}</WalletProvider>
       </body>
     </html>
   );

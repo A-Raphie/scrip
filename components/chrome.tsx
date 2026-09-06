@@ -5,7 +5,7 @@ export function Wordmark({ small = false }: { small?: boolean }) {
     <span
       className={`font-display tracking-tight ${small ? "text-xl" : "text-2xl"}`}
     >
-      Scrip
+      Weft
     </span>
   );
 }

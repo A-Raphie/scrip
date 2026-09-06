@@ -11,8 +11,8 @@ type Params = { params: Promise<{ address: string; hash: string }> };
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { address, hash } = await params;
   return {
-    title: `Scrip certificate ${hash.toUpperCase()} for ${address.slice(0, 6)}...`,
-    description: "A verifiable statement certificate for tokenized stock holdings on Base.",
+    title: `Weft certificate ${hash.toUpperCase()} for ${address.slice(0, 6)}...`,
+    description: "A verifiable basket certificate for tokenized stock holdings on Base.",
   };
 }
 

@@ -1,0 +1,1 @@
+{"version":1,"failures":[{"contract":"test/WeftFork.t.sol:WeftForkTest","test":"test_deposit_weaves_the_whole_basket"}]}

@@ -13,8 +13,8 @@ type Params = { params: Promise<{ address: string }> };
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { address } = await params;
   return {
-    title: `Scrip statement: ${shortAddr(address)}`,
-    description: `Tokenized stock statement for ${shortAddr(address)}: trades, dividends, splits, and issuer notices, each line backed by its transaction.`,
+    title: `Weft statement: ${shortAddr(address)}`,
+    description: `Weft statement for ${shortAddr(address)}: trades, dividends, splits, and issuer notices, each line backed by its transaction.`,
   };
 }
 
