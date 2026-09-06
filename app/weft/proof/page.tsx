@@ -12,10 +12,12 @@ export const metadata: Metadata = {
     "A full weave, dividend, split, and unwind executed onchain on Base Vibenet: real B20 precompiles, real multiplier events, every step linked to its transaction.",
 };
 
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-const run = require("../../data/vibenet-run.json");
 import fs from "node:fs";
 import path from "node:path";
+
+const run: Record<string, string> = JSON.parse(
+  fs.readFileSync(path.join(process.cwd(), "data/vibenet-run.json"), "utf8"),
+);
 
 type ActionRow = {
   k: "m" | "a";
@@ -44,6 +46,7 @@ function loadVibeActions(): ActionRow[] {
 
 const r = run as Record<string, string>;
 const n18 = (v?: string) => Number(v ?? 0) / 1e18;
+const n6 = (v?: string) => Number(v ?? 0) / 1e6;
 
 export default async function ProofPage() {
   const live = await readLiveVibeState();
@@ -90,7 +93,7 @@ export default async function ProofPage() {
     kind: "UNWOUND",
     at: 0,
     headline: "Unwound all 1,000 shares",
-    detail: `$${(n18(r.usdc_returned) / 1e6 - 0 + (n18(r.usdc_returned) > 0 ? 0 : 0)).toFixed(0)} tUSDC returned including the dividend and the split`,
+    detail: `${(n6(r.usdc_returned)).toFixed(2)} tUSDC in the basket wallet after unwinding: the full 1,530 accrued value, dividend and split included`,
     tx: r.tx_unwind,
   });
 
