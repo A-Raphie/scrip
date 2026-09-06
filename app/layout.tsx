@@ -26,6 +26,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://tryscrip.vercel.app"),
+  icons: {
+    icon: "/icon.png",
+    apple: "/apple-touch-icon.png",
+  },
   title: "Weft: one token, woven from real stocks",
   description:
     "Weft weaves USDC into a weighted basket of Coinbase tokenized stocks on Base: one self-custodial index token, dividends handled, redeemable anytime, every step provable.",
