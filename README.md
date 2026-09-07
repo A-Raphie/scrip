@@ -2,7 +2,7 @@
 
 **One token, woven from real stocks.** Weft is an onchain index fund built from Coinbase Tokenized Stocks on Base: weave USDC in, receive a self-custodial basket token holding Apple, NVIDIA, Microsoft, and Tesla, unwind back to USDC anytime. Dividends handled. Every step provable.
 
-Live: https://tryscrip.vercel.app/weft
+Live: https://weftfund.vercel.app/weft
 
 ## The 60-second judge path
 
@@ -14,7 +14,7 @@ Live: https://tryscrip.vercel.app/weft
 
 ## The proof run (onchain, today)
 
-No dividend or split has ever executed on the mainnet registry (all 13 multipliers read 1.0). So the full loop ran on **Base Vibenet**, where the same B20 precompiles are live: weave 1,000 tUSDC into a real B20 index, both dividends land via announced multiplier events (1.00 to 1.02), a 2-for-1 split lands (1.02 to 2.04), unwind closes the loop. **7/7 claims verified against the public RPC** by `node scripts/verify-vibenet.mjs` (see `evidence/claims.json` for artifacts and regeneration commands). Live page: [/weft/proof](https://scrip-statement.netlify.app/weft/proof).
+No dividend or split has ever executed on the mainnet registry (all 13 multipliers read 1.0). So the full loop ran on **Base Vibenet**, where the same B20 precompiles are live: weave 1,000 tUSDC into a real B20 index, both dividends land via announced multiplier events (1.00 to 1.02), a 2-for-1 split lands (1.02 to 2.04), unwind closes the loop. **7/7 claims verified against the public RPC** by `node scripts/verify-vibenet.mjs` (see `evidence/claims.json` for artifacts and regeneration commands). Live page: [/weft/proof](https://weftfund.vercel.app/weft/proof).
 
 The one honest wart: the Vibenet fixture pools use fixed prices, so the split-doubled value reads in the basket valuation but not in the unwind output. On mainnet the pools are Aerodrome Slipstream with live LP pricing.
 

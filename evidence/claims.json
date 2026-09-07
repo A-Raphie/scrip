@@ -1,8 +1,8 @@
 {
   "meta": {
     "project": "Weft",
-    "site": "https://tryscrip.vercel.app",
-    "mirror": "https://scrip-statement.netlify.app",
+    "site": "https://weftfund.vercel.app",
+    "mirror": "https://weftfund.vercel.app",
     "generated": "2026-09-07",
     "note": "Every claim carries its artifact and a regeneration command that trusts nothing in this repo. Claims referencing Vibenet use the public RPC https://rpc.vibes.base.org.",
     "disclosures": [
@@ -65,7 +65,7 @@
     {
       "id": "C09",
       "claim": "The Coinbase registry on Base mainnet is live and Weft reads it: the demo statement resolves real holdings, real trades, and real prices for a real holder address.",
-      "artifact": "https://tryscrip.vercel.app/s/0x68275200408371a3B34D36F1Ce058Cba2423F41F (also on the mirror)",
+      "artifact": "https://weftfund.vercel.app/s/0x68275200408371a3B34D36F1Ce058Cba2423F41F (also on the mirror)",
       "verify": "cast call 0xb200000000000000000000C2e324d24d7eEcd1fb \"balanceOf(address)(uint256)\" 0x68275200408371a3B34D36F1Ce058Cba2423F41F --rpc-url https://mainnet.base.org"
     },
     {
