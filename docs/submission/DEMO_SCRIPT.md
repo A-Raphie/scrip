@@ -1,4 +1,4 @@
-# Loom demo script (~2:20, his voice, VO above the 320-word standard)
+# Loom demo script (~2:20, your voice, VO above the 320-word standard)
 
 Rules: Loom screen recording, natural cursor pace, never compress pauses.
 Read live numbers off the page at record time; do not memorize values that
@@ -115,7 +115,7 @@ Action: none. Hold five seconds.
 
 ---
 
-# Google Form answers (draft: his clicks, notify-gated)
+# Google Form answers (draft: your clicks, notify-gated)
 
 - Project Name: Weft
 - What does it solve in under 1-2 lines: Coinbase tokenized stocks come with
@@ -124,5 +124,5 @@ Action: none. Hold five seconds.
   every step provable onchain.
 - A Demo Video Link: (paste Loom URL after recording)
 - Live Project Link: https://try-weft.vercel.app
-- What's your Builder Code?: (his code from base.dev, Settings, Builder Code)
+- What's your Builder Code?: (your code from base.dev, Settings, Builder Code)
 - Submission Tweet Link: (paste the X post URL after posting, tag @buildonbase)
