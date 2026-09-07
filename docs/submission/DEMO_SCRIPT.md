@@ -6,7 +6,7 @@ that move (basket value, share count).
 
 ## Scene 1: landing (0:00 to 0:14)
 
-On screen: https://weftfund.vercel.app landing.
+On screen: https://try-weft.vercel.app landing.
 
 Say:
 
@@ -79,6 +79,6 @@ Say:
   self-custodial token holding a weighted basket, multiplier-aware so
   dividends accrue correctly, redeemable anytime.
 - A Demo Video Link: (paste Loom URL after recording)
-- Live Project Link: https://weftfund.vercel.app
+- Live Project Link: https://try-weft.vercel.app
 - What's your Builder Code?: (his code from base.dev, Settings, Builder Code)
 - Submission Tweet Link: (paste the X post URL after posting, tag @buildonbase)

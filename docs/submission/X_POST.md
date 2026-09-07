@@ -8,7 +8,7 @@ So I built Weft: weave USDC in, get one self-custodial token holding a weighted 
 
 No manager. No fees. No keys. Every swap provable onchain.
 
-https://weftfund.vercel.app/weft
+https://try-weft.vercel.app/weft
 
 ---
 
@@ -20,4 +20,4 @@ I built Weft: one self-custodial token woven from Apple, NVIDIA, Microsoft, and 
 
 Every swap provable onchain.
 
-https://weftfund.vercel.app/weft
+https://try-weft.vercel.app/weft
