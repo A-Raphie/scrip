@@ -268,7 +268,9 @@ export default function WeftBasketPage({
             Basket value:{" "}
             <strong>
               {liveState.ok
-                ? `$${liveState.value.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+                ? liveState.value >= 0.01
+                  ? `$${liveState.value.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+                  : "$0.00 (fully unwound after the proof run)"
                 : "..."}
             </strong>
           </span>
