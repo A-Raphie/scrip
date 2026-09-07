@@ -78,10 +78,14 @@ export function ProofLink({
   );
 }
 
-export function BackHome() {
+export function BackLink({ href, label }: { href: string; label: string }) {
   return (
-    <Link className="text-sm text-ink-mute hover:text-ink" href="/">
-      Back
+    <Link
+      aria-label={label}
+      className="inline-flex items-center gap-1.5 text-sm text-ink-mute hover:text-ink"
+      href={href}
+    >
+      <span aria-hidden>←</span> {label}
     </Link>
   );
 }

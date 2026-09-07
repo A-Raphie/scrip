@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useWallet } from "@/components/wallet";
-import { BackHome, Footer, Wordmark } from "@/components/chrome";
+import { BackLink, Footer, Wordmark } from "@/components/chrome";
 import { StatusStrip } from "@/components/status-strip";
 
 export default function WeftBasketPage() {
@@ -11,10 +11,7 @@ export default function WeftBasketPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="mx-auto flex w-full max-w-4xl items-center justify-between px-5 pt-7">
-        <div className="flex items-baseline gap-4">
-          <Wordmark small />
-          <BackHome />
-        </div>
+        <Wordmark small />
         {address ? (
           <button onClick={() => {}} className="ring-hairline bg-paper-raise px-3 py-2 font-mono text-xs text-ink">
             {address.slice(0, 6)}...{address.slice(-4)}
@@ -31,6 +28,7 @@ export default function WeftBasketPage() {
       </header>
 
       <main className="mx-auto w-full max-w-4xl flex-1 px-5 pt-6">
+        <BackLink href="/" label="Back to home" />
         <StatusStrip
           items={[
             { label: "Live", tone: "live" },

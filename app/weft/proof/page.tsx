@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { readLiveVibeState, vibe, vibenetTx } from "@/lib/vibenet";
 import { fmtDate } from "@/lib/format";
-import { BackHome, Footer, Wordmark } from "@/components/chrome";
+import { BackLink, Footer, Wordmark } from "@/components/chrome";
 import { StatusStrip } from "@/components/status-strip";
 
 export const revalidate = 300;
@@ -101,10 +101,7 @@ export default async function ProofPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="mx-auto flex w-full max-w-4xl items-center justify-between px-5 pt-7">
-        <div className="flex items-baseline gap-4">
-          <Wordmark small />
-          <BackHome />
-        </div>
+        <Wordmark small />
         <span className="font-mono text-xs tracking-[0.14em] text-ink-mute">BASE VIBENET · TESTNET</span>
       </header>
 

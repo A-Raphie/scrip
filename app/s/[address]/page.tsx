@@ -4,7 +4,7 @@ import Link from "next/link";
 import { buildStatement, fmtDate, fmtMultiplier, fmtShares, fmtTokens, fmtUsd } from "@/lib/statement";
 import { client } from "@/lib/b20";
 import { Tape } from "@/components/tape";
-import { BackHome, Footer, Wordmark } from "@/components/chrome";
+import { BackLink, Footer, Wordmark } from "@/components/chrome";
 
 export const revalidate = 120;
 
@@ -48,10 +48,7 @@ export default async function StatementPage({ params }: Params) {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="mx-auto flex w-full max-w-4xl items-center justify-between px-5 pt-7">
-        <div className="flex items-baseline gap-4">
-          <Wordmark small />
-          <BackHome />
-        </div>
+        <Wordmark small />
         {hasAnything && (
           <Link
             className="bg-ink px-4 py-2 text-sm font-medium text-paper hover:bg-ink-soft"
