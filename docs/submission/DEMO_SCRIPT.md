@@ -41,10 +41,12 @@ brokerage statement. Look at the summary: two hundred thirty-eight dollars
 and forty-three cents across five positions. Seventy-six lines, straight
 off the chain. Every buy, every sell, dated and ordered, valued at the live
 oracle price on screen. And this blue proof on every single line opens the
-exact transaction on Basescan. Nothing here is stored in a database. There
-is no backend holding this page up. The chain is re-read, from scratch,
-every single time anyone opens it, which is exactly what a statement should
-be."
+exact transaction on Basescan. And when an address holds nothing, the page
+says so plainly instead of pretending. Every statement can also be minted
+into a certificate: a signed page that re-checks itself against the chain
+on every view. Nothing here is stored in a database. There is no backend
+holding this page up. The chain is re-read, from scratch, every single time
+anyone opens it, which is exactly what a statement should be."
 
 Action: let the tape print, hover a proof link while the VO names it, click
 it, hold Basescan two seconds, navigate back, pause on the summary strip.
@@ -62,7 +64,10 @@ measured, not guessed. Weave USDC in, one transaction swaps across every
 pool, and you hold a single index token instead of four separate positions.
 The weave swaps on Aerodrome, the deepest liquidity on Base, and the whole
 route costs cents in gas. Unwind burns the token and hands your USDC back.
-No manager. No fees. No keys. No admin."
+And read the last column: Coinbase's own docs warn that one token does not
+always equal one share. The multiplier moves on every corporate action, and
+any basket that ignores it breaks silently. Weft is built around it. No
+manager. No fees. No keys. No admin."
 
 Action: slow horizontal scroll across the table, pause on the multiplier
 column.
@@ -82,11 +87,12 @@ multiplier still reads one. So Weft proved the whole loop on Base's
 testnet, where the same B20 precompiles are live. The stock tokens there
 were created through Coinbase's own factory. One thousand dollars woven in.
 The dividend lands: ten twenty, and the issuer announcement is written
-onchain in plain English. The split lands: fifteen thirty. Unwound. And
-watch the raw balances in that table: they never moved. All of it flowed
-through the multiplier, exactly how Coinbase designed it. When the first
-real dividend runs on mainnet, Weft renders it the same way,
-automatically."
+onchain in plain English, not hidden in a PDF. The split lands: fifteen
+thirty. Unwound. And watch the raw balances in that table: they never
+moved. All of it flowed through the multiplier, exactly how Coinbase
+designed it. Seven claims, verified from a fresh connection, no trust in
+anything we host. When the first real dividend runs on mainnet, Weft
+renders it the same way, automatically."
 
 Action: scroll row by row, hold two seconds on the dividend row and the
 split row.
