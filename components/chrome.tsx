@@ -85,7 +85,10 @@ export function BackLink({ href, label }: { href: string; label: string }) {
       className="inline-flex items-center gap-1.5 text-sm text-ink-mute hover:text-ink"
       href={href}
     >
-      <span aria-hidden>←</span> {label}
+      <svg aria-hidden width="14" height="14" viewBox="0 0 16 16" fill="none" className="shrink-0">
+        <path d="M10 3 5 8l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+      {label}
     </Link>
   );
 }

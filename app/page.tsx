@@ -314,19 +314,35 @@ export default async function Home() {
               <div className="ring-hairline bg-paper-raise p-6">
                 <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-[#2EBD85]">Does</p>
                 <ul className="mt-4 space-y-3 text-sm leading-relaxed text-ink-soft">
-                  <li className="flex gap-2"><span className="font-mono text-[#2EBD85]">✓</span>Print a full statement for any address, every line backed by its transaction</li>
-                  <li className="flex gap-2"><span className="font-mono text-[#2EBD85]">✓</span>Weave USDC into a self-custodial basket of the four deepest stock pools</li>
-                  <li className="flex gap-2"><span className="font-mono text-[#2EBD85]">✓</span>Render dividends and splits from the onchain multiplier, with issuer announcements attached</li>
-                  <li className="flex gap-2"><span className="font-mono text-[#2EBD85]">✓</span>Re-verify every claim from public RPC, trusting nothing we host</li>
+                  <li className="flex gap-2"><svg aria-hidden width="14" height="14" viewBox="0 0 16 16" fill="none" className="mt-0.5 shrink-0">
+                    <path d="M3 8.5 6.5 12 13 4.5" stroke="#2EBD85" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>Print a full statement for any address, every line backed by its transaction</li>
+                  <li className="flex gap-2"><svg aria-hidden width="14" height="14" viewBox="0 0 16 16" fill="none" className="mt-0.5 shrink-0">
+                    <path d="M3 8.5 6.5 12 13 4.5" stroke="#2EBD85" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>Weave USDC into a self-custodial basket of the four deepest stock pools</li>
+                  <li className="flex gap-2"><svg aria-hidden width="14" height="14" viewBox="0 0 16 16" fill="none" className="mt-0.5 shrink-0">
+                    <path d="M3 8.5 6.5 12 13 4.5" stroke="#2EBD85" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>Render dividends and splits from the onchain multiplier, with issuer announcements attached</li>
+                  <li className="flex gap-2"><svg aria-hidden width="14" height="14" viewBox="0 0 16 16" fill="none" className="mt-0.5 shrink-0">
+                    <path d="M3 8.5 6.5 12 13 4.5" stroke="#2EBD85" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>Re-verify every claim from public RPC, trusting nothing we host</li>
                 </ul>
               </div>
               <div className="ring-hairline bg-paper-raise p-6">
                 <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-mute">Does not</p>
                 <ul className="mt-4 space-y-3 text-sm leading-relaxed text-ink-mute">
-                  <li className="flex gap-2"><span className="font-mono">✗</span>Enable trading for US users: tokenized stocks are non-US only</li>
-                  <li className="flex gap-2"><span className="font-mono">✗</span>Custody your funds, hold keys, or take fees: the contract has no owner</li>
-                  <li className="flex gap-2"><span className="font-mono">✗</span>Pay cash dividends: B20 reinvests them as shares by design, and Weft renders that</li>
-                  <li className="flex gap-2"><span className="font-mono">✗</span>Come audited: solo hackathon build, disclosed everywhere it matters</li>
+                  <li className="flex gap-2"><svg aria-hidden width="14" height="14" viewBox="0 0 16 16" fill="none" className="mt-0.5 shrink-0">
+                  <path d="m4 4 8 8M12 4l-8 8" stroke="#6F7A72" strokeWidth="1.8" strokeLinecap="round" />
+                </svg>Enable trading for US users: tokenized stocks are non-US only</li>
+                  <li className="flex gap-2"><svg aria-hidden width="14" height="14" viewBox="0 0 16 16" fill="none" className="mt-0.5 shrink-0">
+                  <path d="m4 4 8 8M12 4l-8 8" stroke="#6F7A72" strokeWidth="1.8" strokeLinecap="round" />
+                </svg>Custody your funds, hold keys, or take fees: the contract has no owner</li>
+                  <li className="flex gap-2"><svg aria-hidden width="14" height="14" viewBox="0 0 16 16" fill="none" className="mt-0.5 shrink-0">
+                  <path d="m4 4 8 8M12 4l-8 8" stroke="#6F7A72" strokeWidth="1.8" strokeLinecap="round" />
+                </svg>Pay cash dividends: B20 reinvests them as shares by design, and Weft renders that</li>
+                  <li className="flex gap-2"><svg aria-hidden width="14" height="14" viewBox="0 0 16 16" fill="none" className="mt-0.5 shrink-0">
+                  <path d="m4 4 8 8M12 4l-8 8" stroke="#6F7A72" strokeWidth="1.8" strokeLinecap="round" />
+                </svg>Come audited: solo hackathon build, disclosed everywhere it matters</li>
                 </ul>
               </div>
             </div>
