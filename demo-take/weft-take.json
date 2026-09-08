@@ -1,0 +1,317 @@
+{
+  "driver": "http://127.0.0.1:9333",
+  "cdp": "http://127.0.0.1:9222",
+  "voDir": "/tmp/weft/beats",
+  "outDir": "/tmp/weft",
+  "final": "/Users/raphie/Documents/Hackathons/scrip/demo-take/final.mp4",
+  "cursorPark": "0,1111",
+  "recorder": "avfoundation",
+  "avDevice": 2,
+  "avScale": 2,
+  "scenes": {
+    "1": {
+      "name": "hook-landing",
+      "prep": [
+        {
+          "t": "goto",
+          "url": "https://scrip-statement.netlify.app/"
+        },
+        {
+          "t": "hold",
+          "ms": 2500
+        }
+      ],
+      "actions": [
+        {
+          "t": "wheel",
+          "dy": 700
+        },
+        {
+          "t": "hold",
+          "ms": 2200
+        },
+        {
+          "t": "wheel",
+          "dy": 700
+        },
+        {
+          "t": "hold",
+          "ms": 2600
+        },
+        {
+          "t": "wheel",
+          "dy": 650
+        },
+        {
+          "t": "hold",
+          "ms": 3200
+        },
+        {
+          "t": "wheel",
+          "dy": 700
+        },
+        {
+          "t": "hold",
+          "ms": 2600
+        },
+        {
+          "t": "wheel",
+          "dy": 700
+        },
+        {
+          "t": "hold",
+          "ms": 2400
+        },
+        {
+          "t": "wheel",
+          "dy": 700
+        },
+        {
+          "t": "hold",
+          "ms": 2400
+        },
+        {
+          "t": "wheel",
+          "dy": 700
+        },
+        {
+          "t": "hold",
+          "ms": 2600
+        },
+        {
+          "t": "wheel",
+          "dy": 700
+        },
+        {
+          "t": "hold",
+          "ms": 2600
+        },
+        {
+          "t": "wheel",
+          "dy": 700
+        },
+        {
+          "t": "hold",
+          "ms": 2400
+        },
+        {
+          "t": "wheel",
+          "dy": 700
+        },
+        {
+          "t": "hold",
+          "ms": 2600
+        },
+        {
+          "t": "wheel",
+          "dy": 700
+        },
+        {
+          "t": "hold",
+          "ms": 2400
+        },
+        {
+          "t": "wheel",
+          "dy": 900
+        },
+        {
+          "t": "hold",
+          "ms": 2600
+        }
+      ]
+    },
+    "2": {
+      "name": "statement",
+      "prep": [
+        {
+          "t": "goto",
+          "url": "https://scrip-statement.netlify.app/s/0x68275200408371a3B34D36F1Ce058Cba2423F41F"
+        },
+        {
+          "t": "hold",
+          "ms": 9000
+        }
+      ],
+      "actions": [
+        {
+          "t": "hold",
+          "ms": 9000
+        },
+        {
+          "t": "cmove",
+          "x": 1010,
+          "y": 398
+        },
+        {
+          "t": "hold",
+          "ms": 1800
+        },
+        {
+          "t": "clickJs",
+          "find": "proof"
+        },
+        {
+          "t": "hold",
+          "ms": 4000
+        },
+        {
+          "t": "goto",
+          "url": "https://scrip-statement.netlify.app/s/0x68275200408371a3B34D36F1Ce058Cba2423F41F"
+        },
+        {
+          "t": "hold",
+          "ms": 9000
+        },
+        {
+          "t": "wheel",
+          "dy": 800
+        },
+        {
+          "t": "hold",
+          "ms": 4000
+        },
+        {
+          "t": "wheel",
+          "dy": 800
+        },
+        {
+          "t": "hold",
+          "ms": 4000
+        }
+      ]
+    },
+    "3": {
+      "name": "basket",
+      "prep": [
+        {
+          "t": "goto",
+          "url": "https://scrip-statement.netlify.app/weft"
+        },
+        {
+          "t": "hold",
+          "ms": 3500
+        }
+      ],
+      "actions": [
+        {
+          "t": "hold",
+          "ms": 2200
+        },
+        {
+          "t": "wheel",
+          "dy": 500
+        },
+        {
+          "t": "hold",
+          "ms": 2400
+        },
+        {
+          "t": "wheel",
+          "dy": 300
+        },
+        {
+          "t": "hold",
+          "ms": 4400
+        },
+        {
+          "t": "cmove",
+          "x": 700,
+          "y": 420
+        },
+        {
+          "t": "hold",
+          "ms": 4000
+        },
+        {
+          "t": "wheel",
+          "dy": 300
+        },
+        {
+          "t": "hold",
+          "ms": 4200
+        }
+      ]
+    },
+    "4": {
+      "name": "proof-run",
+      "prep": [
+        {
+          "t": "goto",
+          "url": "https://scrip-statement.netlify.app/weft/proof"
+        },
+        {
+          "t": "hold",
+          "ms": 4000
+        }
+      ],
+      "actions": [
+        {
+          "t": "hold",
+          "ms": 3000
+        },
+        {
+          "t": "wheel",
+          "dy": 350
+        },
+        {
+          "t": "hold",
+          "ms": 5200
+        },
+        {
+          "t": "wheel",
+          "dy": 300
+        },
+        {
+          "t": "hold",
+          "ms": 5600
+        },
+        {
+          "t": "wheel",
+          "dy": 300
+        },
+        {
+          "t": "hold",
+          "ms": 5600
+        },
+        {
+          "t": "wheel",
+          "dy": 300
+        },
+        {
+          "t": "hold",
+          "ms": 5600
+        },
+        {
+          "t": "wheel",
+          "dy": 500
+        },
+        {
+          "t": "hold",
+          "ms": 6600
+        }
+      ]
+    },
+    "5": {
+      "name": "close",
+      "prep": [
+        {
+          "t": "goto",
+          "url": "https://scrip-statement.netlify.app/"
+        },
+        {
+          "t": "hold",
+          "ms": 4000
+        }
+      ],
+      "actions": [
+        {
+          "t": "hold",
+          "ms": 17196
+        }
+      ]
+    }
+  },
+  "locators": {
+    "proof": "[...document.querySelectorAll('a')].find(a => /proof/i.test(a.textContent))"
+  }
+}
