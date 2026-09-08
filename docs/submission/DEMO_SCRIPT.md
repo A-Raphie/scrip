@@ -13,19 +13,12 @@ cards, stop on "Weft is the layer that was missing."
 
 Say:
 
-"Coinbase just put real stocks onchain. Apple, NVIDIA, Microsoft, Tesla:
-actual shares, living on Base as tokens, buyable from any wallet, with no
-brokerage account. And people are buying them: this card on the right is
-reading live prices off the oracle feeds right now. Thirteen stocks in the
-registry. But here's what nobody tells you. When you buy one, all you
-receive is a number in your wallet. No statement. No purchase history. No
-dividend notice. Nothing you could show an accountant, or a friend, or
-yourself six months from now. And dividends here don't arrive as cash at
-all: the issuer quietly raises an onchain number, and your tokens become
-more shares overnight. If you never check, you never know you got paid."
-
-Action: slow scroll, pin each line to the section it names, hold on the
-closing line.
+"Coinbase just put real stocks onchain. Apple, NVIDIA, Microsoft, and
+Tesla: real shares, on Base, in any wallet, no brokerage. But buy one, and
+all you get is a number in your wallet. No statement. No dividend notice.
+And dividends here never arrive as cash: the issuer quietly raises an
+onchain number, and your tokens become more shares overnight. If you never
+check, you never know you got paid."
 
 ## Scene 2: the statement (0:32 to 1:15)
 
@@ -34,22 +27,14 @@ one proof link opens Basescan in the same tab, back to the page.
 
 Say:
 
-"That's the gap Weft closes, and it starts with paperwork. This is a real
-address that's been buying these stocks since August. I pasted it in. No
-login, no signature, no account: just the address, and Weft prints the full
-brokerage statement. Look at the summary: two hundred thirty-eight dollars
-and forty-three cents across five positions. Seventy-six lines, straight
-off the chain. Every buy, every sell, dated and ordered, valued at the live
-oracle price on screen. And this blue proof on every single line opens the
-exact transaction on Basescan. And when an address holds nothing, the page
-says so plainly instead of pretending. Every statement can also be minted
-into a certificate: a signed page that re-checks itself against the chain
-on every view. Nothing here is stored in a database. There is no backend
-holding this page up. The chain is re-read, from scratch, every single time
-anyone opens it, which is exactly what a statement should be."
-
-Action: let the tape print, hover a proof link while the VO names it, click
-it, hold Basescan two seconds, navigate back, pause on the summary strip.
+"Weft closes that gap, starting with paperwork. This is a real address
+buying these stocks since August. I pasted it in. No login, no signature:
+just the address, and Weft prints the full statement. Seventy-six lines,
+straight off the chain, valued at the live oracle price on screen. And this
+blue proof on every line opens the exact transaction on Basescan. Nothing
+is stored. The chain is re-read from scratch, every single time. Every
+statement also mints into a certificate that re-checks itself against the
+chain on every view."
 
 ## Scene 3: the basket (1:15 to 1:40)
 
@@ -58,19 +43,11 @@ multiplier column, then the fund line.
 
 Say:
 
-"Then the basket itself. Thirty-five percent Apple, thirty-five NVIDIA,
-fifteen Microsoft, fifteen Tesla: the four deepest stock pools on Base,
-measured, not guessed. Weave USDC in, one transaction swaps across every
-pool, and you hold a single index token instead of four separate positions.
-The weave swaps on Aerodrome, the deepest liquidity on Base, and the whole
-route costs cents in gas. Unwind burns the token and hands your USDC back.
-And read the last column: Coinbase's own docs warn that one token does not
-always equal one share. The multiplier moves on every corporate action, and
-any basket that ignores it breaks silently. Weft is built around it. No
-manager. No fees. No keys. No admin."
-
-Action: slow horizontal scroll across the table, pause on the multiplier
-column.
+"Then the basket. Thirty-five percent Apple, thirty-five NVIDIA, fifteen
+Microsoft, fifteen Tesla: the four deepest stock pools on Base, measured,
+not guessed. Weave USDC in, one transaction swaps across every pool, and
+you hold a single index token. Unwind burns it and returns your USDC. The
+whole route costs cents in gas. No manager. No fees."
 
 ## Scene 4: the proof run (1:40 to 2:10)
 
@@ -82,20 +59,12 @@ Say:
 
 "Now the part a generic basket gets wrong. These dividends are never paid
 in cash. The issuer raises an onchain multiplier, and your tokens quietly
-become more shares. No dividend has ever run on the mainnet registry: every
-multiplier still reads one. So Weft proved the whole loop on Base's
-testnet, where the same B20 precompiles are live. The stock tokens there
-were created through Coinbase's own factory. One thousand dollars woven in.
-The dividend lands: ten twenty, and the issuer announcement is written
-onchain in plain English, not hidden in a PDF. The split lands: fifteen
-thirty. Unwound. And watch the raw balances in that table: they never
-moved. All of it flowed through the multiplier, exactly how Coinbase
-designed it. Seven claims, verified from a fresh connection, no trust in
-anything we host. When the first real dividend runs on mainnet, Weft
-renders it the same way, automatically."
-
-Action: scroll row by row, hold two seconds on the dividend row and the
-split row.
+become more shares. No dividend has ever run on mainnet: every multiplier
+reads one. So Weft proved the whole loop on Base's testnet, same B twenty
+precompiles, live. One thousand dollars woven in. Dividend lands: ten
+twenty. Split lands: fifteen thirty. Unwound. And the raw balances never
+moved. It all flowed through the multiplier, exactly how Coinbase designed
+it."
 
 ## Scene 5: close (2:10 to 2:30)
 
@@ -105,15 +74,8 @@ live prices strip still moving.
 Say:
 
 "Weft. Real stocks, one token, and the paperwork that was always missing.
-The app is live, the source is public, and every claim on this page
-re-verifies itself against the chain. The multipliers, the prices, the
-history: all of it reads straight from public endpoints, and the repo ships
-verify scripts that re-check every number from a fresh connection. You
-don't have to trust any of it. Check it."
-
-Action: none. Hold five seconds.
-
----
+The app is live, the source is public, and every claim re-verifies itself
+against the chain. Check it."
 
 # Google Form answers (draft: your clicks, notify-gated)
 
