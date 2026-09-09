@@ -26,7 +26,7 @@ Statements can be minted into certificates that re-check themselves against the 
 
 Weft also ships the first index token over those stocks.
 
-Thirty-five percent Apple, thirty-five percent NVIDIA, fifteen Microsoft, fifteen Tesla.
+35% Apple, 35% NVIDIA, 15% Microsoft, 15% Tesla.
 
 Weave USDC in, hold one token, unwind anytime.
 
