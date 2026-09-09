@@ -16,21 +16,21 @@ No history.
 
 No dividend notice.
 
-I built Weft to close that gap for the Base Builder Quest @buildonbase.
+So I built Weft for the Base Builder Quest @buildonbase.
 
 Paste any address and Weft prints the full brokerage statement.
 
-Every buy and sell is dated, valued at the live oracle price, and linked to the exact transaction on Basescan.
+Every buy and sell shows up dated, valued at the live oracle price, and linked to the exact transaction on Basescan.
 
-Statements can be minted into certificates that re-check themselves against the chain on every view.
+Any statement can also be minted into a certificate that re-checks itself against the chain on every view.
 
-Weft also ships the first index token over those stocks.
+Weft also ships the first index token for those stocks.
 
 35% Apple, 35% NVIDIA, 15% Microsoft, 15% Tesla.
 
 Weave USDC in, hold one token, unwind anytime.
 
-The contract reads B20 multipliers directly, so the first dividend accrues to holders without breaking a single weight.
+The contract reads B20 multipliers directly, so the first dividend accrues without breaking a single weight.
 
 No manager.
 
@@ -42,11 +42,11 @@ Nothing is stored in a database.
 
 The chain is re-read from scratch every time anyone opens a statement.
 
-No dividend has ever run on the mainnet registry, so the full loop is proven on Base's testnet.
+No dividend has ever run on the mainnet registry, so we proved the full loop on Base's testnet.
 
 $1,000 woven in became $1,020 at the dividend and $1,530 at the split.
 
-Every claim re-verifies against the chain from a fresh connection, with scripts in the repo.
+Every claim re-verifies against the chain from a fresh connection, and the scripts are in the repo.
 
 try-weft.vercel.app
 
