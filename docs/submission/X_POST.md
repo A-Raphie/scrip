@@ -1,23 +1,83 @@
 # X post (final copy for @A_Raphie)
 
-Coinbase put real stocks on Base: Apple, NVIDIA, Microsoft, Tesla, as tokens.
+## Long standalone (tagged, the link that goes in the form)
 
-Buying them one by one is fine. But your stocks just became composable, and nobody is composing them.
+Coinbase just put real stocks on Base.
 
-So I built Weft: weave USDC in, get one self-custodial token holding a weighted basket of those stocks. Unwind anytime. The contract reads B20 multipliers directly, so when the first dividend lands, it accrues to holders without breaking a single weight.
+Apple, NVIDIA, Microsoft, and Tesla now trade as tokens in any wallet, with no brokerage account.
 
-No manager. No fees. No keys. Every swap provable onchain.
+People are buying them.
 
-https://try-weft.vercel.app/weft
+All you receive is a number in your wallet.
 
----
+No statement.
 
-# Alternative short version (same claims, compressed)
+No history.
 
-Tokenized stocks on Base just made equity composable, and nobody is composing it.
+No dividend notice.
 
-I built Weft: one self-custodial token woven from Apple, NVIDIA, Microsoft, and Tesla on Base. Weave USDC in, unwind anytime, multiplier-aware so dividends land correctly.
+I built Weft to close that gap for the Base Builder Quest @buildonbase.
 
-Every swap provable onchain.
+Paste any address and Weft prints the full brokerage statement.
 
-https://try-weft.vercel.app/weft
+Every buy and sell is dated, valued at the live oracle price, and linked to the exact transaction on Basescan.
+
+Statements can be minted into certificates that re-check themselves against the chain on every view.
+
+Weft also ships the first index token over those stocks.
+
+Thirty-five percent Apple, thirty-five percent NVIDIA, fifteen Microsoft, fifteen Tesla.
+
+Weave USDC in, hold one token, unwind anytime.
+
+The contract reads B20 multipliers directly, so the first dividend accrues to holders without breaking a single weight.
+
+No manager.
+
+No fees.
+
+No keys.
+
+Nothing is stored in a database.
+
+The chain is re-read from scratch every time anyone opens a statement.
+
+No dividend has ever run on the mainnet registry, so the full loop is proven on Base's testnet.
+
+$1,000 woven in became $1,020 at the dividend and $1,530 at the split.
+
+Every claim re-verifies against the chain from a fresh connection, with scripts in the repo.
+
+try-weft.vercel.app
+
+github.com/A-Raphie/scrip
+
+## Short quote-repost (same claims, compressed)
+
+Coinbase put real stocks on Base.
+
+Apple, NVIDIA, Microsoft, and Tesla now trade as tokens in any wallet.
+
+I built Weft for the Base Builder Quest @buildonbase.
+
+Paste any address and Weft prints the full brokerage statement, every line valued at the live oracle price and linked to the exact transaction on Basescan.
+
+It also ships the first index token over those stocks.
+
+Weave USDC in, hold one token, unwind anytime.
+
+The contract reads B20 multipliers directly, so the first dividend accrues without breaking a single weight.
+
+No manager.
+
+No fees.
+
+No keys.
+
+The first dividend has never run on mainnet, so the loop is proven on Base's testnet.
+
+$1,000 woven in became $1,020 at the dividend and $1,530 at the split.
+
+try-weft.vercel.app
+
+github.com/A-Raphie/scrip
