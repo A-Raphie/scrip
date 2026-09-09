@@ -8,13 +8,9 @@ Apple, NVIDIA, Microsoft, and Tesla now trade as tokens in any wallet, with no b
 
 People are buying them.
 
-All you receive is a number in your wallet.
+But all you receive is a number in your wallet.
 
-No statement.
-
-No history.
-
-No dividend notice.
+You get no statement, no history, and no notice when a dividend lands.
 
 So I built Weft for the Base Builder Quest @buildonbase.
 
@@ -32,11 +28,7 @@ Weave USDC in, hold one token, unwind anytime.
 
 The contract reads B20 multipliers directly, so the first dividend accrues without breaking a single weight.
 
-No manager.
-
-No fees.
-
-No keys.
+There is no manager, no fee, and no admin key.
 
 Nothing is stored in a database.
 
@@ -68,11 +60,7 @@ Weave USDC in, hold one token, unwind anytime.
 
 The contract reads B20 multipliers directly, so the first dividend accrues without breaking a single weight.
 
-No manager.
-
-No fees.
-
-No keys.
+There is no manager, no fee, and no admin key.
 
 The first dividend has never run on mainnet, so the loop is proven on Base's testnet.
 
