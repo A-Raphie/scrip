@@ -26,6 +26,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://try-weft.vercel.app"),
+  other: {
+    "base:app_id": "6aa1bceefa92e96bd08c5a40",
+  },
   icons: {
     icon: "/icon.png",
     apple: "/apple-touch-icon.png",
